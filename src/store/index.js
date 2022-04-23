@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -31,12 +30,13 @@ const store = configureStore({
 
 // using toolkit actions
 export const counterActions = counterSlice.actions;
-console.log(store.getState());
+// console.log(store.getState());
 export default store;
 
 /* -------------------------------------------------------------------------- */
 /*                            Using ReactRedux Only                           */
 /* -------------------------------------------------------------------------- */
+// import { createStore } from "redux";
 // const counterReducer = (state = initialState, action) => {
 //   if (action.type === "INCREMENT") {
 //     return {
