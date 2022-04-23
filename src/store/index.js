@@ -1,5 +1,5 @@
-import { createStore } from "redux";
-import { createSlice } from "@reduxjs/toolkit";
+// import { createStore } from "redux";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const intialState = {
   counter: 0,
@@ -24,36 +24,39 @@ const counterSlice = createSlice({
     },
   },
 });
+const store = configureStore({
+  reducer: counterSlice.reducer,
+});
 
-const counterReducer = (state = intialState, action) => {
-  if (action.type === "INCREMENT") {
-    return {
-      counter: state.counter + 1,
-      showCounter: state.showCounter,
-    };
-  }
-  if (action.type === "DECREMENT") {
-    return {
-      counter: state.counter - 1,
-      showCounter: state.showCounter,
-    };
-  }
-  if (action.type === "INCREASE") {
-    return {
-      counter: state.counter + action.amount,
-      showCounter: state.showCounter,
-    };
-  }
-  if (action.type === "TOGGLE_COUNTER") {
-    return {
-      counter: state.counter,
-      showCounter: !state.showCounter,
-    };
-  }
+// const counterReducer = (state = intialState, action) => {
+//   if (action.type === "INCREMENT") {
+//     return {
+//       counter: state.counter + 1,
+//       showCounter: state.showCounter,
+//     };
+//   }
+//   if (action.type === "DECREMENT") {
+//     return {
+//       counter: state.counter - 1,
+//       showCounter: state.showCounter,
+//     };
+//   }
+//   if (action.type === "INCREASE") {
+//     return {
+//       counter: state.counter + action.amount,
+//       showCounter: state.showCounter,
+//     };
+//   }
+//   if (action.type === "TOGGLE_COUNTER") {
+//     return {
+//       counter: state.counter,
+//       showCounter: !state.showCounter,
+//     };
+//   }
 
-  return state;
-};
+//   return state;
+// };
 
-const store = createStore(counterReducer);
+// const store = createStore(counterReducer);
 
 export default store;
