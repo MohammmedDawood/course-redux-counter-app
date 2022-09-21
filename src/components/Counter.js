@@ -56,8 +56,8 @@ export default Counter;
 //         <h1>Redux Counter</h1>
 //         <div className={classes.value}>{this.props.counter}</div>
 
-//         <button onClick={this.incrementHandler.bind()}>Increment</button>
-//         <button onClick={this.decrementHandler.bind()}>Decrement</button>
+//         <button onClick={this.incrementHandler.bind(this)}>Increment</button>
+//         <button onClick={this.decrementHandler.bind(this)}>Decrement</button>
 //         <button onClick={this.toggleCounterHandler}>Toggle Counter</button>
 //       </main>
 //     );
