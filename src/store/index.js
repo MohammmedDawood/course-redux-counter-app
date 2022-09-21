@@ -25,6 +25,10 @@ const counterSlice = createSlice({
   },
 });
 
+// using toolkit actions
+// counter actions
+export const counterActions = counterSlice.actions;
+
 // auth state slice
 const initialAuthState = {
   isAuthenticated: false,
@@ -42,15 +46,13 @@ const authSlice = createSlice({
   },
 });
 
+// using toolkit actions
+// auth actions
+export const authActions = authSlice.actions;
+
 const store = configureStore({
   reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
 });
-
-// using toolkit actions
-// counter actions
-export const counterActions = counterSlice.actions;
-// auth actions
-export const authActions = authSlice.actions;
 
 console.log(store.getState());
 export default store;
